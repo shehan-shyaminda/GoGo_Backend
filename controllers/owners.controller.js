@@ -28,7 +28,7 @@ exports.userLogin = (req, res) => {
 exports.userRegister = (req, res) => {
     console.log(req.body);
     const user = new db.user({
-        username: req.body.username,
+        username: req.body.username.toLowerCase(),
         userPassword: req.body.userPassword
     });
     user.save().then(r => {
